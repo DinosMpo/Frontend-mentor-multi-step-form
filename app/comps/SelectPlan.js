@@ -33,8 +33,8 @@ const SelectPlan = () => {
     }
 
     const plans = planList.map((plan, key)=> {
-        if(activePlan === plan.name) return <Plan changePlan={changePlan} key={key} className={`active-plan ${plan.name}`} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free}/>
-        else                         return <Plan changePlan={changePlan} key={key} className={plan.name} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free}/>
+        if(activePlan === plan.name) return <Plan changePlan={changePlan} activeDatePlan={activeDatePlan} key={key} className={`active-plan ${plan.name}`} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free}/>
+        else                         return <Plan changePlan={changePlan} activeDatePlan={activeDatePlan} key={key} className={plan.name} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free}/>
     });
 
 
