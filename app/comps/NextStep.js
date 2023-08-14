@@ -1,8 +1,8 @@
 import React from 'react'
 
-const NextStep = () => {
+const NextStep = ({setStepIndicator}) => {
   return (
-    <div className='next-step'>
+    <div className='next-step' onClick={() => setStepIndicator(preValue => preValue +1)}>
         Next Step
     </div>
   )

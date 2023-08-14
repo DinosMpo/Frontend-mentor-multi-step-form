@@ -274,3 +274,8 @@ input:checked + .slider:before {
   font-weight: 700;
   cursor: pointer;
 }
+
+.active-step {
+   background-color: white;
+   color: black;
+}

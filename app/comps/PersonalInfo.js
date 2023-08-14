@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PersonaInfo = () => {
+const PersonalInfo = () => {
   return (
     <div className='personal-info-container'>
         <h1 className='personal-info-title'>Personal Info</h1>
@@ -18,4 +18,4 @@ const PersonaInfo = () => {
   )
 }
 
-export default PersonaInfo
+export default PersonalInfo

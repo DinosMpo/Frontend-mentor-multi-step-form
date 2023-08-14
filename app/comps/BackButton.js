@@ -1,8 +1,8 @@
 import React from 'react'
 
-const BackButton = () => {
+const BackButton = ({setStepIndicator}) => {
   return (
-    <div className='back-button'>
+    <div className='back-button' onClick={()=> setStepIndicator(preValue => preValue-1)}>
         Go Back
     </div>
   )
