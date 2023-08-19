@@ -1,6 +1,7 @@
 import React from 'react'
 import NextStep from './NextStep'
 import PersonalInfo from './PersonalInfo'
+import AddOns from './PickAddOns'
 import SelectPlan from './SelectPlan'
 import BackButton from './BackButton'
 
@@ -14,7 +15,7 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
         return <SelectPlan />
       };
       case 3: {
-        return <PersonalInfo />
+        return <AddOns />
       };
       case 4: {
         return <PersonalInfo />
