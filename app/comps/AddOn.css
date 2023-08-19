@@ -1,0 +1,49 @@
+.add-ons-container {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.add-on {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 450px;
+    height: 80px;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 10px;
+}
+
+.add-on-wrapper-info {
+    display: flex;
+}
+
+.add-on-name {
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.add-on-description {
+    color: hsl(231, 11%, 63%);
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.add-on-check {
+    margin-left: 23px;
+    margin-right: 25px;
+}
+
+.add-on-price {
+    align-items: start;
+    margin-right: 25px;
+    color: hsl(243, 100%, 62%);
+}
+
+.active-add-on {
+    background-color: hsl(217, 100%, 97%);
+    border: 1px solid hsl(243, 100%, 62%);
+}

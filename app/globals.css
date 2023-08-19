@@ -17,7 +17,7 @@ body {
 
 .section-wrapper {
   height: 100%;
-  max-height: 544px;
+  max-height: 600px;
   width: 100%;
   max-width: 940px;
   /* border: 1px solid black; */
@@ -88,13 +88,13 @@ body {
   max-height: 560px;
 }
 
-.personal-info-title {
+.personal-info-title, .add-on-info-title {
   margin: 0px;
   margin-top: 50px;
   margin-bottom: 10px;
 }
 
-.personal-info-description {
+.personal-info-description, .add-on-info-description {
   color: hsl(231, 11%, 63%);
 }
 
@@ -147,16 +147,9 @@ body {
   padding: 20px 15px 20px 15px;
   box-sizing: border-box;
   display: flex;
-  /* justify-content: space-between; */
   flex-flow: column nowrap;
   cursor: pointer;
 }
-
-/* .plan-info-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-} */
 
 .plan-name {
   font-weight: 700;
@@ -279,3 +272,4 @@ input:checked + .slider:before {
    background-color: white;
    color: black;
 }
+
