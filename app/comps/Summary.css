@@ -1,0 +1,83 @@
+.summary-info-title {
+    margin: 0px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+  
+.summary-info-description {
+    color: hsl(231, 11%, 63%);
+}
+
+.summary-container {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 18px;
+    background-color: hsl(231, 100%, 99%);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.summary-wrapper {
+    width: 450px;
+}
+
+.summary-plan-container, .summary-total-container, .summary-addon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary-addon-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.summary-total-container {
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.summary-plan-name {
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.summary-plan-price {
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.summary-addon-name {
+    color: hsl(231, 11%, 63%);
+}
+
+.summary-total {
+    color: hsl(231, 11%, 63%);
+}
+
+.summary-addon-price {
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+.summary-total-price {
+    color: hsl(243, 100%, 62%);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.summary-plan-change {
+    color: hsl(231, 11%, 63%);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #333;  /* old IE */
+    background-color: hsl(229, 24%, 87%);
+}
