@@ -1,5 +1,5 @@
 import React from 'react'
-import AddOn from './AddOn'
+import AddOn from '../AddOn/AddOn'
 
 const AddOns = () => {
   const addons = [

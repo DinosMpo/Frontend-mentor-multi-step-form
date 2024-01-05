@@ -107,7 +107,7 @@ body {
   /* gap: 15px; */
 }
 
-.personal-info-form input {
+.input-name, .input-email, .input-phone{
   padding: 13px;
   border-radius: 5px;
   border: 1px solid hsl(229, 24%, 87%);
@@ -273,3 +273,33 @@ input:checked + .slider:before {
    color: black;
 }
 
+.input-name-error, .input-email-error, .input-phone-error {
+  border: 1px solid red;
+}
+
+.display-error {
+  position: absolute;
+  right: 0;
+  color: red;
+  font-weight: 500;
+}
+
+.input-name-required {
+  display: none;
+}
+
+.input-email-required {
+  display: none;
+}
+
+.input-phone-required {
+  display: none;
+}
+
+.show-error {
+  display: block;
+}
+
+/* .hide-error {
+  display: none;
+} */
