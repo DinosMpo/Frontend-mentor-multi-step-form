@@ -1,6 +1,6 @@
 import React from 'react'
 import './Summary.css'
-import ThankYou from './ThankYou'
+import ThankYou from '../ThankYou/ThankYou'
 
 const Summary = () => {
   return (

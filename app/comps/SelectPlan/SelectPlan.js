@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
-import Plan from './Plan'
+import Plan from '../Plan/Plan'
 
 const SelectPlan = () => {
     const [activePlan, setActivePlan] = useState('Arcade');
