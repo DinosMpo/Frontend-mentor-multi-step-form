@@ -5,7 +5,7 @@ import Section1 from './comps/Section1/Section1'
 import Section2 from './comps/Section2/Section2'
 
 export default function Home() {
-  const [stepIndicator, setStepIndicator] = useState(1);
+  const [stepIndicator, setStepIndicator] = useState(5);
 
   return (
     <div className='container'>

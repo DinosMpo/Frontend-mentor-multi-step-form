@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import NextStep from '../NextStep/NextStep';
 
-const PersonalInfo = ({error, setInfo, setStepIndicator}) => {
+const PersonalInfo = ({error, info, setInfo, setStepIndicator}) => {
 
   useEffect(()=> {
     // const inputName = document.getElementById('input-name');
@@ -18,9 +18,11 @@ const PersonalInfo = ({error, setInfo, setStepIndicator}) => {
     const inputNameRequired= document.getElementsByClassName('input-name-required');
     const inputEmailRequired = document.getElementsByClassName('input-email-required');
     const inputPhoneRequired = document.getElementsByClassName('input-phone-required');
+    let nextStep = true;
 
     if(inputName[0].value === '') {
       console.log('Name empty');
+      nextStep = false;
       inputName[0].classList.add('input-name-error');
       inputNameRequired[0].classList.add('show-error');
     }else{
@@ -31,6 +33,7 @@ const PersonalInfo = ({error, setInfo, setStepIndicator}) => {
     }
     if(inputEmail[0].value === '') {
       console.log('Email empty');
+      nextStep = false;
       inputEmail[0].classList.add('input-email-error');
       inputEmailRequired[0].classList.add('show-error');
     }else{
@@ -41,6 +44,7 @@ const PersonalInfo = ({error, setInfo, setStepIndicator}) => {
     }
     if(inputPhone[0].value === '') {
       console.log('Phone empty');
+      nextStep = false;
       inputPhone[0].classList.add('input-phone-error');
       inputPhoneRequired[0].classList.add('show-error');
     }else{
@@ -48,6 +52,16 @@ const PersonalInfo = ({error, setInfo, setStepIndicator}) => {
         inputPhone[0].classList.remove('input-phone-error');
         inputPhoneRequired[0].classList.remove('show-error');
       }
+    }
+
+    if(nextStep) {
+      setStepIndicator((preValue) => preValue + 1);
+      setInfo({
+        ...info,
+        name: inputName[0].value,
+        email: inputEmail[0].value,
+        phone: inputPhone[0].value,
+      });
     }
   }
 

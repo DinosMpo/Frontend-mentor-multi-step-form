@@ -5,7 +5,7 @@ const Plan = ({changePlan, activeDatePlan, className, name, image, monthly, year
   return (
     <div className={`plan ${className}`} onClick={(event) => changePlan(event, name)}>
         <div className='plan-image-wrapper'>
-            <Image className='plan-image' width={40} height={40} src={image}/>
+            <Image className='plan-image' alt={'image'} width={40} height={40} src={image}/>
         </div>
 
         <div className='plan-info-wrapper'>

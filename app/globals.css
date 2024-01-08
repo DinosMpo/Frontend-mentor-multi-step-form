@@ -120,9 +120,21 @@ body {
   margin-bottom: 8px;
 }
 
-.next-step, .confirm {
+.next-step {
   color: white;
   background-color: hsl(213, 96%, 18%);
+  position: absolute;
+  bottom: 35px;
+  right: 0px;
+  padding: 12px 20px 12px 20px;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.confirm {
+  color: white;
+  background-color: hsl(213, 100%, 38%);
   position: absolute;
   bottom: 35px;
   right: 0px;
