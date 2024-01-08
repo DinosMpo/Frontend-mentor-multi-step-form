@@ -1,25 +1,50 @@
-import React from 'react'
+"use client";
+
+import {useState} from 'react'
 import AddOn from '../AddOn/AddOn'
+import BackButton from '../BackButton/BackButton';
+import NextStep from '../NextStep/NextStep';
 
-const AddOns = () => {
-  const addons = [
-    {name: 'Online service', description: 'Access to multiplayer games', price: 1},
-    {name: 'Larger storage', description: 'Extra 1TB of save', price: 2},
-    {name: 'Customizable profile', description: 'Custom theme on your profile', price: 2},
-  ];
+const PickAddOns = ({info, setInfo, setStepIndicator}) => {
+  const [addons, setAddons] = useState([
+    {name: 'Online service', description: 'Access to multiplayer games', price: 1, checked: false},
+    {name: 'Larger storage', description: 'Extra 1TB of save', price: 2, checked: false},
+    {name: 'Customizable profile', description: 'Custom theme on your profile', price: 2, checked: false},
+  ]);
 
-  const chooseAddOn = (event, name) => {
-    if(event.currentTarget.parentElement.parentElement.classList.contains('active-add-on')) {
-      event.currentTarget.parentElement.parentElement.classList.remove('active-add-on');
+  const chooseAddOn = (event, name, addon) => {
+    if(event.currentTarget.classList.contains('active-add-on')) {
+      event.currentTarget.classList.remove('active-add-on');
+      event.currentTarget.children[0].children[0].checked = false;
+      addon.checked = false;
     }else{
-      event.currentTarget.parentElement.parentElement.classList.add('active-add-on');
+      event.currentTarget.classList.add('active-add-on');
+      event.currentTarget.children[0].children[0].checked = true;
+      addon.checked = true;
     }
-    console.log(event.currentTarget.parentElement.parentElement);
+    console.log(addons);
   }
 
   const listOfAddOns = addons.map((addon, key)=> {
-    return <AddOn chooseAddOn={chooseAddOn} key={key} name={addon.name} description={addon.description} price={addon.price} />
+    return <AddOn info={info} chooseAddOn={chooseAddOn} key={key} 
+      // name={addon.name} description={addon.description} price={addon.price}
+      addon={addon}
+      
+      />
   });
+
+  const pickAddOnsValidation = () => {
+    //if you havent choose an add on then you can proceed is unecessary
+    //so if you have chose an add on then i have to store it and they are many
+    //now how do i store the add ons? they are multiple maybe with an array? or an object? we will see tomorrow
+
+
+    setStepIndicator((preValue) => preValue + 1);
+    setInfo({
+      ...info,
+      addons: addons,
+    });
+  }
 
   return (
     <div>
@@ -29,8 +54,15 @@ const AddOns = () => {
         <div className='add-ons-container'>
             {listOfAddOns}
         </div>
+
+        <div className='bottom-buttons'>
+          <BackButton setStepIndicator={setStepIndicator}/>
+          <NextStep 
+            validation={pickAddOnsValidation}
+          />
+        </div>
     </div>
   )
 }
 
-export default AddOns
+export default PickAddOns

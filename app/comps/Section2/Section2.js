@@ -4,8 +4,7 @@ import PersonalInfo from '../PersonalInfo/PersonalInfo'
 import PickAddOns from '../PickAddOns/PickAddOns'
 import Summary from '../Summary/Summary'
 import SelectPlan from '../SelectPlan/SelectPlan'
-import BackButton from '../BackButton/BackButton'
-import Confirm from '../Confirm/Confirm'
+import ThankYou from '../ThankYou/ThankYou'
 
 const Section2 = ({stepIndicator, setStepIndicator}) => {
   const [info, setInfo] = useState({
@@ -23,20 +22,20 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
   const renderStep = (stepIndicator) => {
     switch(stepIndicator) {
       case 1: {
-        return <PersonalInfo error={error} setInfo={setInfo} setStepIndicator={setStepIndicator}/>
+        return <PersonalInfo error={error} info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
       case 2: {
-        return <SelectPlan />
+        return <SelectPlan info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
       case 3: {
-        return <PickAddOns />
+        return <PickAddOns info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
       case 4: {
-        return <Summary />
+        return <Summary info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
       case 5: {
-        return <PersonalInfo />
-      };
+        return <ThankYou />
+      }
       default: {
         <div></div>
       };

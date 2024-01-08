@@ -1,0 +1,19 @@
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    width: 390px;
+}
+
+.thank-you-container h1 {
+    color: hsl(213, 96%, 18%);
+}
+
+.thank-you-container p {
+    color: hsl(231, 11%, 63%);
+    line-height: 25px;
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
