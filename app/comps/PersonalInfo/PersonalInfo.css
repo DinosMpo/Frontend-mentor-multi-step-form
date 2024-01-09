@@ -1,0 +1,47 @@
+.personal-info-container {
+    height: 100%;
+    max-height: 560px;
+}
+
+.personal-info-title {
+    font-size: 32px;
+    margin: 0px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+}
+
+.personal-info-description {
+    /* font-weight: 500; */
+    font-size: 16px;
+    color: hsl(231, 11%, 63%);
+
+}
+
+.personal-info-descriptio {
+}
+
+.personal-info-form {
+    /* border: 1px solid black; */
+    margin-top: 42px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    /* gap: 15px; */
+}
+
+.input-name,
+.input-email,
+.input-phone {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid hsl(229, 24%, 87%);
+    box-shadow: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 420px;
+    /* height: 50px; */
+}
+
+.personal-info-form-description {
+    margin-bottom: 8px;
+}

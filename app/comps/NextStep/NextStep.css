@@ -1,16 +1,15 @@
-.confirm {
+.next-step {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 123px;
     height: 50px;
     color: white;
-    background-color: hsl(213, 100%, 38%);
+    background-color: hsl(213, 96%, 18%);
     position: absolute;
     bottom: 35px;
     right: 0px;
     border-radius: 7px;
     font-size: 16px;
-    font-weight: 700;
     cursor: pointer;
-  }
+}

@@ -1,0 +1,80 @@
+.select-plan-title {
+    margin: 0px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.select-plan-description {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: hsl(231, 11%, 63%);
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.plan {
+    border: 1px solid hsl(229, 24%, 87%);
+    width: 140px;
+    min-height: 160px;
+    border-radius: 10px;
+    padding: 20px 15px 20px 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    cursor: pointer;
+}
+
+.plan-name {
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.plan-price {
+    color: hsl(231, 11%, 63%);
+}
+
+.yearly-price {
+    color: hsl(213, 96%, 18%);
+    margin-top: 5px;
+}
+
+.plan-image {
+    display: block;
+}
+
+.plans-charged {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    height: 50px;
+    background-color: hsl(217, 100%, 97%);
+    gap: 25px;
+}
+
+.plan-monthly,
+.plan-yearly {
+    color: hsl(231, 11%, 63%);
+    font-weight: 700;
+}
+
+.plan-monthly {}
+
+.plan-yearly {}
+
+.active-plan {
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+
+.active-date-plan {
+    color: black;
+}
