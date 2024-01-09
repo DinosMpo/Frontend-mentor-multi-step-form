@@ -1,0 +1,11 @@
+.add-on-info-title {
+    margin: 0px;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.add-on-info-description {
+    color: hsl(231, 11%, 63%);
+    font-size: 16px;
+}

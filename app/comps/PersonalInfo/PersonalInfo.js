@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import NextStep from '../NextStep/NextStep';
+import './PersonalInfo.css';
 
 const PersonalInfo = ({error, info, setInfo, setStepIndicator}) => {
 
@@ -67,7 +68,7 @@ const PersonalInfo = ({error, info, setInfo, setStepIndicator}) => {
 
   return (
     <div className='personal-info-container'>
-        <h1 className='personal-info-title'>Personal Info</h1>
+        <h1 className='personal-info-title'>Personal info</h1>
         <div className='personal-info-description'>Please provide your name, email adddress, and phone number.</div>
 
         <div className='personal-info-form'>

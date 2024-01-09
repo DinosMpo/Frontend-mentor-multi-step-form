@@ -1,28 +1,31 @@
 .summary-info-title {
     margin: 0px;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    font-size: 32px;
 }
   
 .summary-info-description {
     color: hsl(231, 11%, 63%);
+    font-size: 16px;
 }
 
 .summary-container {
     display: flex;
-    margin-top: 40px;
+    margin-top: 45px;
     flex-direction: column;
     gap: 18px;
-    background-color: hsl(231, 100%, 99%);
-    padding: 15px;
+    background-color: hsl(217, 100%, 97%);
+    padding: 25px;
     border-radius: 10px;
+    /* border: 1px solid black; */
 }
 
 .summary-wrapper {
     width: 450px;
 }
 
-.summary-plan-container, .summary-total-container, .summary-addon {
+.summary-plan-container, .summary-total-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,27 +54,20 @@
     font-size: 16px;
 }
 
-.summary-addon-name {
-    color: hsl(231, 11%, 63%);
-}
-
 .summary-total {
     color: hsl(231, 11%, 63%);
-}
-
-.summary-addon-price {
-    color: hsl(213, 96%, 18%);
-    font-weight: 500;
 }
 
 .summary-total-price {
     color: hsl(243, 100%, 62%);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .summary-plan-change {
     color: hsl(231, 11%, 63%);
+    margin-top: 5px;
+    text-decoration: underline;
 }
 
 hr {
@@ -80,4 +76,5 @@ hr {
     /* Set the hr color */
     color: #333;  /* old IE */
     background-color: hsl(229, 24%, 87%);
+    margin-bottom: 0px;
 }

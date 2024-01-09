@@ -1,0 +1,52 @@
+.steps-container {
+    height: 100%;
+    width: 275px;
+    max-height: 565px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-image: url('/bg-sidebar-desktop.svg');
+    background-size: cover;
+}
+
+.steps {
+    display: flex;
+    gap: 30px;
+    flex-flow: column nowrap;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 15px;
+}
+
+.step-number {
+    border: 1px solid white;
+    border-radius: 200px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-content {}
+
+.step-number-title {
+    font-weight: 400;
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+}
+
+.step-info {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.active-step {
+    background-color: hsl(206, 94%, 87%);
+    color: black;
+ }

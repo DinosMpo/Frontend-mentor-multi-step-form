@@ -1,6 +1,6 @@
-import React from 'react'
+import './Section1.css';
 
-const Section1 = ({stepIndicator}) => {
+export default function Section1 ({stepIndicator}) {
   return (
     <div className='steps-container'> 
         <div className='steps'>
@@ -36,5 +36,3 @@ const Section1 = ({stepIndicator}) => {
     </div>
   )
 }
-
-export default Section1

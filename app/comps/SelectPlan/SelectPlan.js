@@ -1,9 +1,10 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Plan from '../Plan/Plan'
 import BackButton from '../BackButton/BackButton';
 import NextStep from '../NextStep/NextStep';
+import './SelectPlan.css';
 
 const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
     const [activePlan, setActivePlan] = useState('Arcade');
