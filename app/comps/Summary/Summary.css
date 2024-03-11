@@ -1,34 +1,44 @@
+.summary-container {
+    /* max-width: 450px;
+    width: 100%;
+    position: relative; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    max-width: 450px;
+}
+
+.summary-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    /* margin-top: 45px; */
+    /* padding: 25px; */
+}
+
 .summary-info-title {
     margin: 0px;
     margin-top: 55px;
     margin-bottom: 15px;
     font-size: 32px;
 }
-  
+
 .summary-info-description {
     color: hsl(231, 11%, 63%);
     font-size: 16px;
 }
 
-.summary-container {
-    display: flex;
-    margin-top: 45px;
-    flex-direction: column;
-    gap: 18px;
-    background-color: hsl(217, 100%, 97%);
-    padding: 25px;
-    border-radius: 10px;
-    /* border: 1px solid black; */
-}
-
-.summary-wrapper {
-    width: 450px;
-}
-
-.summary-plan-container, .summary-total-container {
+.summary-plan-container,
+.summary-total-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.summary-plan-wrapper {
+    background-color: hsl(217, 100%, 97%);
 }
 
 .summary-addon-container {
@@ -74,7 +84,81 @@ hr {
     border: none;
     height: 1px;
     /* Set the hr color */
-    color: #333;  /* old IE */
+    color: #333;
+    /* old IE */
     background-color: hsl(229, 24%, 87%);
     margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 763px) {
+    .summary-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .summary-wrapper {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 22px;
+        max-width: 90%;
+        margin-top: 37px;
+        flex-direction: column;
+        /* height: 100%; */
+        /* max-height: 500px; */
+    }
+
+    .summary-info-title {
+        margin: 12px 0px;
+        font-size: 24px;
+    }
+
+    .summary-info-description {
+        margin-bottom: 20px;
+    }
+
+    .summary-plan-charge-wrapper {
+        /* border: 1px solid black; */
+    }
+
+    .summary-plan-name {
+        font-size: 14px;
+    }
+
+    .summary-plan-wrapper {
+        background-color: hsl(217, 100%, 97%);
+        padding: 16ypx;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+
+    .summary-plan-container {
+        /* background-color: green; */
+        /* padding-right: 5px; */
+    }
+
+    .summary-addon-container {
+        /* padding: 5px 7px; */
+    }
+
+    .summary-total-container {
+        /* border: 1px solid black; */
+        margin-top: 0px;
+
+    }
+
+    .summary-plan-price {
+        color: hsl(213, 96%, 18%);
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .summary-total-price {
+        color: hsl(243, 100%, 62%);
+        font-weight: 700;
+        font-size: 16px;
+    }
 }

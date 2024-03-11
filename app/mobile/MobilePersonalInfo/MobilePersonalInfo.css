@@ -1,12 +1,21 @@
 .mobile-personal-info-container {
-    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.mobile-personal-info-wrapper {
+    display: flex;
     max-width: 90%;
-    margin: 0px auto;
+    background-color: white;
     border-radius: 10px;
     padding: 20px;
-    padding-bottom: 35px;
+    margin-top: 37px;
     box-sizing: border-box;
-    margin-top: 38px;
+    flex-direction: column;
+    height: 100%;
 }
 
 .mobile-personal-info-title {
@@ -39,8 +48,29 @@
     border-radius: 5px;
     border: 1px solid hsl(229, 24%, 87%);
     box-shadow: none;
-    /* margin-bottom: 20px; */
     cursor: pointer;
     font-weight: 500;
     font-size: 15px;
+}
+
+.mobile-input-name-required,
+.mobile-input-email-required,
+.mobile-input-phone-required {
+    display: none;
+
+}
+
+.input-name-error, .input-email-error, .input-phone-error {
+    border: 1px solid red;
+  }
+
+.mobile-display-error {
+    position: absolute;
+    right: 0;
+    color: red;
+    font-weight: 500;
+}
+
+.show-error {
+    display: block;
 }

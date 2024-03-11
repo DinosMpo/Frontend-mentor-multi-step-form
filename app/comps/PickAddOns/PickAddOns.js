@@ -1,24 +1,27 @@
 "use client";
 
-import {useState} from 'react'
+import { useState } from 'react'
 import AddOn from '../AddOn/AddOn'
-import BackButton from '../BackButton/BackButton';
-import NextStep from '../NextStep/NextStep';
+// import BottomButtons from '../BottomButtons/BottomButtons';
 import './PickAddOns.css';
+import MobileBottomButtons from '@/app/mobile/MobileBottomButtons/MobileBottomButtons';
+import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
 
-const PickAddOns = ({info, setInfo, setStepIndicator}) => {
-  const [addons, setAddons] = useState([
-    {name: 'Online service', description: 'Access to multiplayer games', price: 1, checked: false},
-    {name: 'Larger storage', description: 'Extra 1TB of save', price: 2, checked: false},
-    {name: 'Customizable profile', description: 'Custom theme on your profile', price: 2, checked: false},
-  ]);
 
-  const chooseAddOn = (event, name, addon) => {
-    if(event.currentTarget.classList.contains('active-add-on')) {
+const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
+  // const [addons, setAddons] = useState([
+  //   { name: 'Online service', description: 'Access to multiplayer games', price: 1, checked: false },
+  //   { name: 'Larger storage', description: 'Extra 1TB of save', price: 2, checked: false },
+  //   { name: 'Customizable profile', description: 'Custom theme on your profile', price: 2, checked: false },
+  // ]);
+  const [addons, setAddons] = useState(info.addons);
+
+  const chooseAddOn = (event, addon) => {
+    if (event.currentTarget.classList.contains('active-add-on')) {
       event.currentTarget.classList.remove('active-add-on');
       event.currentTarget.children[0].children[0].checked = false;
       addon.checked = false;
-    }else{
+    } else {
       event.currentTarget.classList.add('active-add-on');
       event.currentTarget.children[0].children[0].checked = true;
       addon.checked = true;
@@ -26,11 +29,12 @@ const PickAddOns = ({info, setInfo, setStepIndicator}) => {
     console.log(addons);
   }
 
-  const listOfAddOns = addons.map((addon, key)=> {
-    return <AddOn info={info} chooseAddOn={chooseAddOn} key={key} 
+  const listOfAddOns = addons.map((addon, key) => {
+    return <AddOn info={info} chooseAddOn={chooseAddOn} key={key}
       // name={addon.name} description={addon.description} price={addon.price}
       addon={addon}
-      />
+      index={key}
+    />
   });
 
   const pickAddOnsValidation = () => {
@@ -45,20 +49,20 @@ const PickAddOns = ({info, setInfo, setStepIndicator}) => {
   }
 
   return (
-    <div>
+    <div className='pick-addon-container'>
+      <div className='pick-addon-wrapper'>
+
         <h1 className='add-on-info-title'>Pick add-ons</h1>
         <div className='add-on-info-description'>Add-ons help enhance your gaming experience.</div>
 
         <div className='add-ons-container'>
-            {listOfAddOns}
+          {listOfAddOns}
         </div>
+      </div>
 
-        <div className='bottom-buttons'>
-          <BackButton setStepIndicator={setStepIndicator}/>
-          <NextStep 
-            validation={pickAddOnsValidation}
-          />
-        </div>
+      {/* <BottomButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation} /> */}
+      {/* <MobileBottomButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation}/> */}
+      <BottomTwoButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation} />
     </div>
   )
 }

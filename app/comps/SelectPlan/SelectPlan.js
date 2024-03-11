@@ -1,14 +1,20 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Plan from '../Plan/Plan'
-import BackButton from '../BackButton/BackButton';
-import NextStep from '../NextStep/NextStep';
+import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
+import MobileBottomButtons from '../../mobile/MobileBottomButtons/MobileBottomButtons';
 import './SelectPlan.css';
+import { changeDatePlan } from '../../lib/validations';
 
 const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
-    const [activePlan, setActivePlan] = useState('Arcade');
-    const [activeDatePlan, setActiveDatePlan] = useState('Monthly');
+    useEffect(() => {
+        const datePlan = document.getElementsByClassName('date-plan');
+        if(activeDatePlan === 'Yearly') datePlan[0].checked = true;
+    }, []);
+
+    const [activePlan, setActivePlan] = useState(info.plan);
+    const [activeDatePlan, setActiveDatePlan] = useState(info.charge);
 
     const planList = [
         { name: 'Arcade', image: 'icon-arcade.svg', monthly: 9, yearly: 90, free: 2 },
@@ -16,30 +22,29 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
         { name: 'Pro', image: 'icon-pro.svg', monthly: 15, yearly: 150, free: 2 }
     ];
 
-    const changePlan = (event, name) => {
-        if (event.currentTarget.classList.contains('active-plan')) {
-            event.currentTarget.classList.remove('active-plan');
-            setActivePlan(name);
-        } else {
-            event.currentTarget.classList.add('active-plan');
-            setActivePlan(name);
-        }
-    }
-
-    const changeDatePlan = (event) => {
-        console.log(activeDatePlan);
-        if (activeDatePlan === 'Monthly') {
-            setActiveDatePlan('Yearly');
-        } else if (activeDatePlan === 'Yearly') {
-            setActiveDatePlan('Monthly');
-        }
-    }
-
     const plans = planList.map((plan, key) => {
         if (activePlan === plan.name) 
-            return <Plan changePlan={changePlan} activeDatePlan={activeDatePlan} key={key} className={`active-plan ${plan.name}`} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free} />
+            return <Plan 
+                setActivePlan={setActivePlan}
+                activeDatePlan={activeDatePlan}
+                key={key}
+                className={`active-plan ${plan.name}`}
+                name={plan.name}
+                image={plan.image}
+                monthly={plan.monthly}
+                yearly={plan.yearly}
+                free={plan.free} />
         else 
-            return <Plan changePlan={changePlan} activeDatePlan={activeDatePlan} key={key} className={plan.name} name={plan.name} image={plan.image} monthly={plan.monthly} yearly={plan.yearly} free={plan.free} />
+            return <Plan 
+                setActivePlan={setActivePlan}
+                activeDatePlan={activeDatePlan}
+                key={key}
+                className={plan.name}
+                name={plan.name}
+                image={plan.image}
+                monthly={plan.monthly}
+                yearly={plan.yearly}
+                free={plan.free} />
     });
 
     const selectPlanValidation = () => {
@@ -54,31 +59,28 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
 
     return (
         <div className='select-plan-container'>
-            <h1 className='select-plan-title'>Select your plan</h1>
-            <div className='select-plan-description'>You have the option of monthly or yearly billing.</div>
+            <div className='select-plan-wrapper'>
 
-            <div className='plans-container'>
-                <div className='plans'>
-                    {plans}
+                <h1 className='select-plan-title'>Select your plan</h1>
+                <div className='select-plan-description'>You have the option of monthly or yearly billing.</div>
+
+                <div className='plans-container'>
+                    <div className='plans'>
+                        {plans}
+                    </div>
+
+                    <div className='plans-charged'>
+                        <span className={`plan-monthly ${activeDatePlan === 'Monthly' ? 'active-date-plan' : ''}`}>Monthly</span>
+                        <label className="switch">
+                            <input className='date-plan' type="checkbox" onClick={() => changeDatePlan(activeDatePlan, setActiveDatePlan)} />
+                            <span className="slider round"></span>
+                        </label>
+                        <span className={`plan-yearly ${activeDatePlan === 'Yearly' ? 'active-date-plan' : ''}`}>Yearly</span>
+                    </div>
                 </div>
-
-                <div className='plans-charged'>
-                    <span className={`plan-monthly ${activeDatePlan === 'Monthly' ? 'active-date-plan' : ''}`}>Monthly</span>
-
-                    <label className="switch">
-                        <input type="checkbox" onClick={changeDatePlan} />
-                        <span className="slider round"></span>
-                    </label>
-
-                    <span className={`plan-yearly ${activeDatePlan === 'Yearly' ? 'active-date-plan' : ''}`}>Yearly</span>
-                </div>
-
-                <div className='bottom-buttons'>
-                    <BackButton setStepIndicator={setStepIndicator}/>
-                    <NextStep validation={selectPlanValidation} />
-                </div>
-
             </div>
+            {/* <MobileBottomButtons setStepIndicator={setStepIndicator} validation={selectPlanValidation}/> */}
+            <BottomTwoButtons setStepIndicator={setStepIndicator} validation={selectPlanValidation} />
         </div>
     )
 }

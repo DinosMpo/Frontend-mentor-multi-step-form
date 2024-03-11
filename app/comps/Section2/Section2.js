@@ -1,5 +1,7 @@
+"use client"
+
 import React, {useState} from 'react'
-import NextStep from '../NextStep/NextStep'
+import './Section2.css';
 import PersonalInfo from '../PersonalInfo/PersonalInfo'
 import PickAddOns from '../PickAddOns/PickAddOns'
 import Summary from '../Summary/Summary'
@@ -11,9 +13,13 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
     name: '',
     email: '',
     phone: '',
-    plan: '',
-    charge: '',
-    addons: [],
+    plan: 'Arcade',
+    charge: 'Monthly',
+    addons: [
+      { name: 'Online service', description: 'Access to multiplayer games', price: 1, checked: false },
+      { name: 'Larger storage', description: 'Extra 1TB of cloud save', price: 2, checked: false },
+      { name: 'Customizable profile', description: 'Custom theme on your profile', price: 2, checked: false },
+    ],
     total: ''
   });
 
@@ -22,7 +28,7 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
   const renderStep = (stepIndicator) => {
     switch(stepIndicator) {
       case 1: {
-        return <PersonalInfo error={error} info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
+        return <PersonalInfo info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
       case 2: {
         return <SelectPlan info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
@@ -45,6 +51,7 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
   return (
     <div className='section2'>
       {renderStep(stepIndicator)}
+      
       {/* {stepIndicator === 4 ? <Confirm /> : <NextStep setStepIndicator={setStepIndicator} />} */}
       {/* {stepIndicator === 1 ? '': <BackButton  setStepIndicator={setStepIndicator} />} */}
     </div>

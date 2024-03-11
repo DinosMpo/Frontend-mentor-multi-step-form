@@ -1,3 +1,12 @@
+.pick-addon-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    width: 100%;
+}
+
 .add-on-info-title {
     margin: 0px;
     margin-top: 55px;
@@ -8,4 +17,49 @@
 .add-on-info-description {
     color: hsl(231, 11%, 63%);
     font-size: 16px;
+}
+
+@media only screen and (max-width: 763px) {
+    .pick-addon-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .pick-addon-wrapper {
+        display: flex;
+        max-width: 90%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 37px;
+        box-sizing: border-box;
+        flex-direction: column;
+        height: 100%;
+        max-height: 385px;
+    }
+
+    .add-on-info-title {
+        color: hsl(213, 96%, 18%);
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+    .add-on-info-description {
+        color: hsl(231, 11%, 63%);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .add-ons-container {
+        display: flex;
+        margin-top: 18px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
 }

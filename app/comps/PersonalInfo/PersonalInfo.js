@@ -1,61 +1,34 @@
-import React, {useEffect} from 'react'
+"use client"
+
+import React, { useEffect } from 'react';
+import BottomSingleButton from '../BottomSingleButton/BottomSingleButton';
 import NextStep from '../NextStep/NextStep';
+import MobileNextStep from '../../mobile/MobileNextStep/MobileNextStep';
 import './PersonalInfo.css';
+import { personalInfoValidation } from '../../lib/validations';
 
-const PersonalInfo = ({error, info, setInfo, setStepIndicator}) => {
 
-  useEffect(()=> {
-    // const inputName = document.getElementById('input-name');
-    // const inputEmail = document.getElementById('input-email');
-    // const inputPhone = document.getElementById('input-phone');
+export default function PersonalInfo({ info, setInfo, setStepIndicator }) {
+  useEffect(() => {
     // console.log(inputName);
-    console.log(error);
+    inputName[0].value = info.name;
+    inputEmail[0].value = info.email;
+    inputPhone[0].value = info.phone;
   }, []);
-  
-  const personalInfoValidation = () => {
-    const inputName = document.getElementsByClassName('input-name');
-    const inputEmail = document.getElementsByClassName('input-email');
-    const inputPhone = document.getElementsByClassName('input-phone');
-    const inputNameRequired= document.getElementsByClassName('input-name-required');
-    const inputEmailRequired = document.getElementsByClassName('input-email-required');
-    const inputPhoneRequired = document.getElementsByClassName('input-phone-required');
-    let nextStep = true;
 
-    if(inputName[0].value === '') {
-      console.log('Name empty');
-      nextStep = false;
-      inputName[0].classList.add('input-name-error');
-      inputNameRequired[0].classList.add('show-error');
-    }else{
-      if(inputName[0].classList.contains('input-name-error')) {
-        inputName[0].classList.remove('input-name-error');
-        inputNameRequired[0].classList.remove('show-error');
-      }
-    }
-    if(inputEmail[0].value === '') {
-      console.log('Email empty');
-      nextStep = false;
-      inputEmail[0].classList.add('input-email-error');
-      inputEmailRequired[0].classList.add('show-error');
-    }else{
-      if(inputEmail[0].classList.contains('input-email-error')) {
-        inputEmail[0].classList.remove('input-email-error');
-        inputEmailRequired[0].classList.remove('show-error');
-      }
-    }
-    if(inputPhone[0].value === '') {
-      console.log('Phone empty');
-      nextStep = false;
-      inputPhone[0].classList.add('input-phone-error');
-      inputPhoneRequired[0].classList.add('show-error');
-    }else{
-      if(inputPhone[0].classList.contains('input-phone-error')) {
-        inputPhone[0].classList.remove('input-phone-error');
-        inputPhoneRequired[0].classList.remove('show-error');
-      }
-    }
+  const inputName = document.getElementsByClassName('input-name');
+  const inputEmail = document.getElementsByClassName('input-email');
+  const inputPhone = document.getElementsByClassName('input-phone');
 
-    if(nextStep) {
+  const handlePersonalInfo = () => {
+    if (personalInfoValidation(
+      'input-name',
+      'input-email',
+      'input-phone',
+      'input-name-required',
+      'input-email-required',
+      'input-phone-required'
+    )) {
       setStepIndicator((preValue) => preValue + 1);
       setInfo({
         ...info,
@@ -68,30 +41,34 @@ const PersonalInfo = ({error, info, setInfo, setStepIndicator}) => {
 
   return (
     <div className='personal-info-container'>
+      <div className='personal-info-wrapper'>
         <h1 className='personal-info-title'>Personal info</h1>
-        <div className='personal-info-description'>Please provide your name, email adddress, and phone number.</div>
+        <div className='personal-info-description'>Please provide your name, email address, and phone number.</div>
 
         <div className='personal-info-form'>
-            <div style={{display: 'flex', flexDirection: 'column', position: 'relative'}}>
-              <div className='personal-info-form-description'>Name</div>
-              <div className={`display-error input-name-required`}>This field is required</div>
-              <input className='input-name' placeholder='e.g. Stephen King' required/>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column'}}>
-              <div className='personal-info-form-description' >Email Address</div>
-              <div className={`display-error input-email-required`}>This field is required</div>
-              <input className='input-email' placeholder='e.g. stephenking@lorem.com' required/>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column'}}>
-              <div className='personal-info-form-description'>Phone Number</div>
-              <div className={`display-error input-phone-required`}>This field is required</div>
-              <input className='input-phone' placeholder='e.g. +1 234 567 890' required/>
-            </div>
+          <div className='personal-info-form-input'>
+            <div className='personal-info-form-description'>Name</div>
+            <div className={`display-error input-name-required`}>This field is required</div>
+            <input type='text' className='input-name' placeholder='e.g. Stephen King' required />
+          </div>
+          <div className='personal-info-form-input'>
+            <div className='personal-info-form-description' >Email Address</div>
+            <div className={`display-error input-email-required`}>This field is required</div>
+            <input className='input-email' placeholder='e.g. stephenking@lorem.com' required />
+          </div>
+          <div className='personal-info-form-input'>
+            <div className='personal-info-form-description'>Phone Number</div>
+            <div className={`display-error input-phone-required`}>This field is required</div>
+            <input className='input-phone' placeholder='e.g. +1 234 567 890' required />
+          </div>
         </div>
+      </div>
 
-        <NextStep validation={personalInfoValidation} />
+      {/* <NextStep validation={handlePersonalInfo} /> */}
+      {/* <MobileNextStep validation={handlePersonalInfo} /> */}
+      <BottomSingleButton>
+        <NextStep validation={handlePersonalInfo} />
+      </BottomSingleButton>
     </div>
   )
 }
-
-export default PersonalInfo

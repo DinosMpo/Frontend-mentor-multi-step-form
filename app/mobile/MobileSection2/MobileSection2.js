@@ -6,7 +6,7 @@ import MobilePickAddOns from '../MobilePickAddOns/MobilePickAddOns';
 import MobileSummary from '../MobileSummary/MobileSummary';
 import MobileThankYou from '../MobileThankYou/MobileThankYou';
 
-export default function MobileSection2({ mobileStepIndicator, setMobileStepIndicator }) {
+export default function MobileSection2({ stepIndicator, setStepIndicator }) {
   const [info, setInfo] = useState({
     name: '',
     email: '',
@@ -19,21 +19,25 @@ export default function MobileSection2({ mobileStepIndicator, setMobileStepIndic
 
   const [error, setError] = useState(false);
 
-  const renderStep = (mobileStepIndicator) => {
-    switch (mobileStepIndicator) {
+  const renderStep = (stepIndicator) => {
+    switch (stepIndicator) {
       case 1: {
         return <MobilePersonalInfo
           error={error}
           info={info}
           setInfo={setInfo}
-          setMobileStepIndicator={setMobileStepIndicator}
+          setStepIndicator={setStepIndicator}
         />
       };
       case 2: {
-        return <MobileSelectPlan />
+        return <MobileSelectPlan
+          info={info}
+          setInfo={setInfo}
+          setStepIndicator={setStepIndicator}
+        />
       };
       case 3: {
-        return <MobilePickAddOns />
+        return <MobilePickAddOns info={info}/>
       };
       case 4: {
         return <MobileSummary />
@@ -48,9 +52,8 @@ export default function MobileSection2({ mobileStepIndicator, setMobileStepIndic
   }
 
   return (
-    <div className='section2'>
-      {renderStep(mobileStepIndicator)}
-      
+    <div className='mobile-section2'>
+      {renderStep(stepIndicator)}
     </div>
   )
 }

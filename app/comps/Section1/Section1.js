@@ -26,7 +26,7 @@ export default function Section1 ({stepIndicator}) {
                 </div>
             </div>
             <div className='step'>
-                <div className={`step-number ${stepIndicator === 4 ? 'active-step' : ''}`}>4</div>
+                <div className={`step-number ${stepIndicator === 4 || stepIndicator === 5 ? 'active-step' : ''}`}>4</div>
                 <div className='step-content'>
                   <div className='step-number-title'>STEP 4</div>
                   <div className='step-info'>SUMMARY</div>
