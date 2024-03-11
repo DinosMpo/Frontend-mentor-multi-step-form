@@ -1,0 +1,19 @@
+.bottom-single-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    /* border: 1px solid black; */
+}
+
+.bottom-single-button-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: right;
+    flex-direction: row;
+    padding-bottom: 35px;
+    box-sizing: border-box;
+    background-color: white;
+}

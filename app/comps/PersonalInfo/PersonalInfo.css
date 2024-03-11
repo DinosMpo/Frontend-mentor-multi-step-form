@@ -1,32 +1,38 @@
 .personal-info-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     height: 100%;
-    max-height: 560px;
+    width: 100%;
+    max-width: 450px;
 }
+
+.personal-info-wrapper {}
 
 .personal-info-title {
     font-size: 32px;
     margin: 0px;
     margin-top: 55px;
     margin-bottom: 10px;
+    color: hsl(213, 96%, 18%);
 }
 
 .personal-info-description {
-    /* font-weight: 500; */
     font-size: 16px;
     color: hsl(231, 11%, 63%);
-
-}
-
-.personal-info-descriptio {
 }
 
 .personal-info-form {
-    /* border: 1px solid black; */
     margin-top: 42px;
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
-    /* gap: 15px; */
+}
+
+.personal-info-form-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .input-name,
@@ -38,10 +44,105 @@
     box-shadow: none;
     margin-bottom: 20px;
     cursor: pointer;
-    width: 420px;
-    /* height: 50px; */
+    font-size: 18px;
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+    /* color: hsl(213, 96%, 18%); */
+    /* margin-left: 5px;
+    margin-right: 5px; */
 }
+
+/* .input-name[type="text"]:enabled {
+    color: red;
+} */
 
 .personal-info-form-description {
     margin-bottom: 8px;
+    color: hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+
+.input-name-error,
+.input-email-error,
+.input-phone-error {
+    border: 1px solid red;
+}
+
+.display-error {
+    position: absolute;
+    right: 0;
+    color: red;
+    font-weight: 500;
+}
+
+.input-name-required,
+.input-email-required,
+.input-phone-required {
+    display: none;
+}
+
+.show-error {
+    display: block;
+}
+
+@media only screen and (max-width: 763px) {
+    .personal-info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        border: 1px solid black;
+    }
+
+    .personal-info-wrapper {
+        display: flex;
+        max-width: 90%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 37px;
+        box-sizing: border-box;
+        flex-direction: column;
+        max-height: 378px;
+        height: 100%;
+    }
+
+    .personal-info-title {
+        color: hsl(213, 96%, 18%);
+        font-size: 24px;
+        margin-top: 0px;
+    }
+
+    .personal-info-description {
+        font-weight: 400;
+        line-height: 25px;
+    }
+
+    .personal-info-form-description {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 3px;
+    }
+
+    .personal-info-form {
+        margin-top: 20px;
+    }
+
+    .input-name,
+    .input-email,
+    .input-phone {
+        padding: 10px;
+        padding-left: 15px;
+        border-radius: 5px;
+        border: 1px solid hsl(229, 24%, 87%);
+        box-shadow: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 15px;
+
+        margin-bottom: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
 }

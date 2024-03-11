@@ -1,14 +1,9 @@
 import './NextStep.css';
 
-const NextStep = ({validation}) => {
+export default function NextStep({validation}) {
   return (
-    <div className='next-step' onClick={()=> validation()}
-      // setStepIndicator(preValue => preValue +1);
-      // validation();
-    >
-        Next Step
+    <div className='next-step' onClick={() => validation() }>
+      Next Step
     </div>
   )
 }
-
-export default NextStep

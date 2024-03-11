@@ -1,6 +1,7 @@
 .steps-container {
     height: 100%;
-    width: 275px;
+    width: 100%;
+    max-width: 275px;
     max-height: 565px;
     margin-left: 20px;
     border-radius: 10px;
@@ -49,4 +50,29 @@
 .active-step {
     background-color: hsl(206, 94%, 87%);
     color: black;
- }
+}
+
+@media only screen and (max-width: 763px) {
+    /* .container {
+      align-items:flex-start;
+    } */
+    .step-content {
+        display: none;
+    }
+
+    .steps-container {
+        background-image: none;
+        height: auto;
+    }
+
+    .steps {
+        display: flex;
+        justify-content: center;
+        flex-flow: row nowrap;
+        margin-left: 0px;
+        margin-top: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        gap: 20px;
+    }
+}
