@@ -13,7 +13,7 @@
 .summary-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    /* gap: 18px; */
     /* margin-top: 45px; */
     /* padding: 25px; */
 }
@@ -23,11 +23,13 @@
     margin-top: 55px;
     margin-bottom: 15px;
     font-size: 32px;
+    color: hsl(213, 96%, 18%);
 }
 
 .summary-info-description {
     color: hsl(231, 11%, 63%);
     font-size: 16px;
+    margin-bottom: 40px;
 }
 
 .summary-plan-container,
@@ -39,6 +41,8 @@
 
 .summary-plan-wrapper {
     background-color: hsl(217, 100%, 97%);
+    /* border: 1px solid black; */
+    padding: 17px;
 }
 
 .summary-addon-container {
