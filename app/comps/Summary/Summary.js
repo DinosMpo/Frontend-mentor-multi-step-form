@@ -60,7 +60,7 @@ const Summary = ({ info, setInfo, setStepIndicator }) => {
 
                     </div>
 
-                    <hr style={{ width: '100%', marginTop: '15px', marginBottom: '15px'}}></hr>
+                    <hr style={{ width: '100%', marginTop: '25px', marginBottom: '15px'}}></hr>
 
                     <div className='summary-addon-container'>
                         {addonList}
