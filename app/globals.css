@@ -60,21 +60,6 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-.back-button {
-  color: hsl(231, 11%, 63%);
-  position: absolute;
-  bottom: 35px;
-  left: 0px;
-  padding: 12px 20px 12px 0px;
-  border-radius: 7px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* .hide-error {
-  display: none;
-} */
-
 @media only screen and (max-width: 763px) {
   /* .container {
     align-items:flex-start;
