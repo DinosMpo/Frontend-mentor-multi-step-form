@@ -3,8 +3,10 @@ import BackButton from '../BackButton/BackButton';
 import ConfirmButton from '../ConfirmButton/ConfirmButton';
 import SummaryAddOn from '../SummaryAddOn/SummaryAddOn';
 import ThankYou from '../ThankYou/ThankYou'
+import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
 
-const Summary = ({ info, setInfo, setStepIndicator }) => {
+
+export default function Summary({ info, setInfo, setStepIndicator }) {
     // console.log(info);
     let price = 0;
     if (info.plan == 'Arcade') {
@@ -77,12 +79,12 @@ const Summary = ({ info, setInfo, setStepIndicator }) => {
                 </div>
             </div>
 
-            <div className='bottom-buttons'>
+            <BottomTwoButtons>
                 <BackButton setStepIndicator={setStepIndicator} />
                 <ConfirmButton validation={summaryValidation} />
-            </div>
+            </BottomTwoButtons>
+
+
         </div>
     )
 }
-
-export default Summary
