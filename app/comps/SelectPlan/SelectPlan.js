@@ -1,16 +1,15 @@
-"use client"
-
 import { useState, useEffect } from 'react'
-import Plan from '../Plan/Plan'
-import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
-import MobileBottomButtons from '../../mobile/MobileBottomButtons/MobileBottomButtons';
 import './SelectPlan.css';
+import Plan from '../Plan/Plan'
 import { changeDatePlan } from '../../lib/validations';
+import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
+import NextStep from '../NextStep/NextStep';
+import BackButton from '../BackButton/BackButton';
 
-const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
+export default function SelectPlan({ info, setInfo, setStepIndicator }) {
     useEffect(() => {
         const datePlan = document.getElementsByClassName('date-plan');
-        if(activeDatePlan === 'Yearly') datePlan[0].checked = true;
+        if (activeDatePlan === 'Yearly') datePlan[0].checked = true;
     }, []);
 
     const [activePlan, setActivePlan] = useState(info.plan);
@@ -23,8 +22,8 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
     ];
 
     const plans = planList.map((plan, key) => {
-        if (activePlan === plan.name) 
-            return <Plan 
+        if (activePlan === plan.name)
+            return <Plan
                 setActivePlan={setActivePlan}
                 activeDatePlan={activeDatePlan}
                 key={key}
@@ -34,8 +33,8 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
                 monthly={plan.monthly}
                 yearly={plan.yearly}
                 free={plan.free} />
-        else 
-            return <Plan 
+        else
+            return <Plan
                 setActivePlan={setActivePlan}
                 activeDatePlan={activeDatePlan}
                 key={key}
@@ -51,10 +50,9 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
         setInfo({
             ...info,
             plan: activePlan,
-            // planPrice: 
             charge: activeDatePlan
         });
-        setStepIndicator((preValue) => preValue+1);
+        setStepIndicator((preValue) => preValue + 1);
     }
 
     return (
@@ -79,10 +77,11 @@ const SelectPlan = ({ info, setInfo, setStepIndicator }) => {
                     </div>
                 </div>
             </div>
-            {/* <MobileBottomButtons setStepIndicator={setStepIndicator} validation={selectPlanValidation}/> */}
-            <BottomTwoButtons setStepIndicator={setStepIndicator} validation={selectPlanValidation} />
+
+            <BottomTwoButtons>
+                <BackButton setStepIndicator={setStepIndicator} />
+                <NextStep validation={selectPlanValidation} />
+            </BottomTwoButtons>
         </div>
     )
 }
-
-export default SelectPlan
