@@ -82,6 +82,11 @@
     color: hsl(231, 11%, 63%);
     margin-top: 5px;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.summary-plan-change:hover {
+    color: hsl(243, 100%, 62%);
 }
 
 hr {
@@ -135,7 +140,7 @@ hr {
     .summary-plan-wrapper {
         background-color: hsl(217, 100%, 97%);
         padding: 16ypx;
-        border: 1px solid red;
+        border-radius: 5px;
         box-sizing: border-box;
     }
 

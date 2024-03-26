@@ -18,5 +18,8 @@
 }
 
 @media only screen and (max-width: 763px) {
-
+    .bottom-buttons-wrapper {
+        align-items: center;
+        padding: 15px;
+    }
 }
