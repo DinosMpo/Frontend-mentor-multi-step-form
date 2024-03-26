@@ -55,10 +55,7 @@ export function personalInfoValidation(name, email, phone, nameRequired, emailRe
 }
 
 export function changePlan(event, name, setActivePlan) {
-    if (event.currentTarget.classList.contains('active-plan')) {
-        event.currentTarget.classList.remove('active-plan');
-        setActivePlan(name);
-    } else {
+    if (!event.currentTarget.classList.contains('active-plan')) {
         event.currentTarget.classList.add('active-plan');
         setActivePlan(name);
     }
