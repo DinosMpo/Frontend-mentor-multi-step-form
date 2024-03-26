@@ -1,16 +1,12 @@
 "use client"
 
 import { useState } from 'react'
-import dynamic from 'next/dynamic';
 import './Section2.css';
 import PickAddOns from '../PickAddOns/PickAddOns'
 import Summary from '../Summary/Summary'
 import SelectPlan from '../SelectPlan/SelectPlan'
 import ThankYou from '../ThankYou/ThankYou'
-
-const PersonalInfo = dynamic(() => import('../PersonalInfo/PersonalInfo'), {
-  ssr: false,
-});
+import PersonalInfo from '../PersonalInfo/PersonalInfo';
 
 const Section2 = ({ stepIndicator, setStepIndicator }) => {
   const [info, setInfo] = useState({
