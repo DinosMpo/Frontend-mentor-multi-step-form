@@ -52,7 +52,7 @@ export default function Summary({ info, setInfo, setStepIndicator }) {
                                 {/* Arcade (Monthly) */}
                                 {`${info.plan} (${info.charge})`}
                             </div>
-                            <div className='summary-plan-change'>Change</div>
+                            <div className='summary-plan-change' onClick={() => setStepIndicator(2)}>Change</div>
                         </div>
 
                         <div className='summary-plan-price'>
