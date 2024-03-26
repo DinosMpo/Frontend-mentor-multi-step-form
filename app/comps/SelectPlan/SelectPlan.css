@@ -12,6 +12,7 @@
     margin-top: 55px;
     margin-bottom: 10px;
     font-size: 32px;
+    color: hsl(213, 96%, 18%);
 }
 
 .select-plan-description {
@@ -28,24 +29,10 @@
     gap: 20px;
 }
 
-/* .plans {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    align-items: center;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 460px;
-} */
-
-
-
 .yearly-price {
     color: hsl(213, 96%, 18%);
     margin-top: 5px;
 }
-
 
 .plans-charged {
     display: flex;
@@ -62,10 +49,6 @@
     color: hsl(231, 11%, 63%);
     font-weight: 700;
 }
-
-.plan-monthly {}
-
-.plan-yearly {}
 
 .active-plan {
     border: 1px solid hsl(243, 100%, 62%);
@@ -95,7 +78,6 @@
         margin-top: 37px;
         flex-direction: column;
         height: 100%;
-        max-height: 500px;
     }
 
     .select-plan-title {
@@ -114,11 +96,6 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 13px;
     }
-
-    .plans-charged {
-        
-    }
-    
 }

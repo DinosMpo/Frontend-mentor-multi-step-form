@@ -6,14 +6,15 @@
     height: 50px;
     color: white;
     background-color: hsl(213, 96%, 18%);
-    position: absolute;
-    bottom: 35px;
-    right: 0px;
-    border-radius: 7px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
 
 @media only screen and (max-width: 763px) {
-
+    .next-step {
+        height: 40px;
+        width: 100px;
+        font-size: 15px;
+    }
 }

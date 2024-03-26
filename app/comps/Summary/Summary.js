@@ -3,8 +3,10 @@ import BackButton from '../BackButton/BackButton';
 import ConfirmButton from '../ConfirmButton/ConfirmButton';
 import SummaryAddOn from '../SummaryAddOn/SummaryAddOn';
 import ThankYou from '../ThankYou/ThankYou'
+import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
 
-const Summary = ({ info, setInfo, setStepIndicator }) => {
+
+export default function Summary({ info, setInfo, setStepIndicator }) {
     // console.log(info);
     let price = 0;
     if (info.plan == 'Arcade') {
@@ -50,7 +52,7 @@ const Summary = ({ info, setInfo, setStepIndicator }) => {
                                 {/* Arcade (Monthly) */}
                                 {`${info.plan} (${info.charge})`}
                             </div>
-                            <div className='summary-plan-change'>Change</div>
+                            <div className='summary-plan-change' onClick={() => setStepIndicator(2)}>Change</div>
                         </div>
 
                         <div className='summary-plan-price'>
@@ -60,7 +62,7 @@ const Summary = ({ info, setInfo, setStepIndicator }) => {
 
                     </div>
 
-                    <hr style={{ width: '100%', marginTop: '15px', marginBottom: '15px'}}></hr>
+                    <hr style={{ width: '100%', marginTop: '25px', marginBottom: '15px'}}></hr>
 
                     <div className='summary-addon-container'>
                         {addonList}
@@ -77,12 +79,12 @@ const Summary = ({ info, setInfo, setStepIndicator }) => {
                 </div>
             </div>
 
-            <div className='bottom-buttons'>
+            <BottomTwoButtons>
                 <BackButton setStepIndicator={setStepIndicator} />
                 <ConfirmButton validation={summaryValidation} />
-            </div>
+            </BottomTwoButtons>
+
+
         </div>
     )
 }
-
-export default Summary

@@ -1,14 +1,14 @@
 "use client"
 
-import React, {useState} from 'react'
+import { useState } from 'react'
 import './Section2.css';
-import PersonalInfo from '../PersonalInfo/PersonalInfo'
 import PickAddOns from '../PickAddOns/PickAddOns'
 import Summary from '../Summary/Summary'
 import SelectPlan from '../SelectPlan/SelectPlan'
 import ThankYou from '../ThankYou/ThankYou'
+import PersonalInfo from '../PersonalInfo/PersonalInfo';
 
-const Section2 = ({stepIndicator, setStepIndicator}) => {
+const Section2 = ({ stepIndicator, setStepIndicator }) => {
   const [info, setInfo] = useState({
     name: '',
     email: '',
@@ -26,7 +26,7 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
   const [error, setError] = useState(false);
 
   const renderStep = (stepIndicator) => {
-    switch(stepIndicator) {
+    switch (stepIndicator) {
       case 1: {
         return <PersonalInfo info={info} setInfo={setInfo} setStepIndicator={setStepIndicator} />
       };
@@ -51,9 +51,6 @@ const Section2 = ({stepIndicator, setStepIndicator}) => {
   return (
     <div className='section2'>
       {renderStep(stepIndicator)}
-      
-      {/* {stepIndicator === 4 ? <Confirm /> : <NextStep setStepIndicator={setStepIndicator} />} */}
-      {/* {stepIndicator === 1 ? '': <BackButton  setStepIndicator={setStepIndicator} />} */}
     </div>
   )
 }

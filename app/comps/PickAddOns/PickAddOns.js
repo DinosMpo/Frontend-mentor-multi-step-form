@@ -2,18 +2,12 @@
 
 import { useState } from 'react'
 import AddOn from '../AddOn/AddOn'
-// import BottomButtons from '../BottomButtons/BottomButtons';
 import './PickAddOns.css';
-import MobileBottomButtons from '@/app/mobile/MobileBottomButtons/MobileBottomButtons';
 import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
-
+import NextStep from '../NextStep/NextStep';
+import BackButton from '../BackButton/BackButton';
 
 const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
-  // const [addons, setAddons] = useState([
-  //   { name: 'Online service', description: 'Access to multiplayer games', price: 1, checked: false },
-  //   { name: 'Larger storage', description: 'Extra 1TB of save', price: 2, checked: false },
-  //   { name: 'Customizable profile', description: 'Custom theme on your profile', price: 2, checked: false },
-  // ]);
   const [addons, setAddons] = useState(info.addons);
 
   const chooseAddOn = (event, addon) => {
@@ -31,7 +25,6 @@ const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
 
   const listOfAddOns = addons.map((addon, key) => {
     return <AddOn info={info} chooseAddOn={chooseAddOn} key={key}
-      // name={addon.name} description={addon.description} price={addon.price}
       addon={addon}
       index={key}
     />
@@ -60,9 +53,10 @@ const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
         </div>
       </div>
 
-      {/* <BottomButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation} /> */}
-      {/* <MobileBottomButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation}/> */}
-      <BottomTwoButtons setStepIndicator={setStepIndicator} validation={pickAddOnsValidation} />
+      <BottomTwoButtons>
+        <BackButton setStepIndicator={setStepIndicator} />
+        <NextStep validation={pickAddOnsValidation} />
+      </BottomTwoButtons>
     </div>
   )
 }
