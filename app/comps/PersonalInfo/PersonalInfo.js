@@ -1,24 +1,27 @@
 "use client"
 
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import BottomSingleButton from '../BottomSingleButton/BottomSingleButton';
 import NextStep from '../NextStep/NextStep';
-import MobileNextStep from '../../mobile/MobileNextStep/MobileNextStep';
 import './PersonalInfo.css';
 import { personalInfoValidation } from '../../lib/validations';
 
-
 export default function PersonalInfo({ info, setInfo, setStepIndicator }) {
-  useEffect(() => {
-    // console.log(inputName);
-    inputName[0].value = info.name;
-    inputEmail[0].value = info.email;
-    inputPhone[0].value = info.phone;
-  }, []);
+  const [testInputName, setTestInputName] = useState(info.name);
+  const [testInputEmail, setTestInputEmail] = useState(info.email);
+  const [testInputPhone, setTestInputPhone] = useState(info.phone);
 
-  const inputName = document.getElementsByClassName('input-name');
-  const inputEmail = document.getElementsByClassName('input-email');
-  const inputPhone = document.getElementsByClassName('input-phone');
+  useEffect(() => {
+    //this code is for the values that the user have completed
+    const inputName = document.getElementsByClassName('input-name');
+    const inputEmail = document.getElementsByClassName('input-email');
+    const inputPhone = document.getElementsByClassName('input-phone');
+
+    inputName[0].value = testInputName;
+    inputEmail[0].value = testInputEmail;
+    inputPhone[0].value = testInputPhone;
+
+  }, []);
 
   const handlePersonalInfo = () => {
     if (personalInfoValidation(
@@ -32,9 +35,9 @@ export default function PersonalInfo({ info, setInfo, setStepIndicator }) {
       setStepIndicator((preValue) => preValue + 1);
       setInfo({
         ...info,
-        name: inputName[0].value,
-        email: inputEmail[0].value,
-        phone: inputPhone[0].value,
+        name: testInputName,
+        email: testInputEmail,
+        phone: testInputPhone,
       });
     }
   }
@@ -49,23 +52,21 @@ export default function PersonalInfo({ info, setInfo, setStepIndicator }) {
           <div className='personal-info-form-input'>
             <div className='personal-info-form-description'>Name</div>
             <div className={`display-error input-name-required`}>This field is required</div>
-            <input type='text' className='input-name' placeholder='e.g. Stephen King' required />
+            <input onChange={(event) => setTestInputName(event.target.value)} type='text' className='input-name' placeholder='e.g. Stephen King' required />
           </div>
           <div className='personal-info-form-input'>
             <div className='personal-info-form-description' >Email Address</div>
             <div className={`display-error input-email-required`}>This field is required</div>
-            <input className='input-email' placeholder='e.g. stephenking@lorem.com' required />
+            <input onChange={(event) => setTestInputEmail(event.target.value)} className='input-email' placeholder='e.g. stephenking@lorem.com' required />
           </div>
           <div className='personal-info-form-input'>
             <div className='personal-info-form-description'>Phone Number</div>
             <div className={`display-error input-phone-required`}>This field is required</div>
-            <input className='input-phone' placeholder='e.g. +1 234 567 890' required />
+            <input onChange={(event) => setTestInputPhone(event.target.value)} className='input-phone' placeholder='e.g. +1 234 567 890' required />
           </div>
         </div>
       </div>
 
-      {/* <NextStep validation={handlePersonalInfo} /> */}
-      {/* <MobileNextStep validation={handlePersonalInfo} /> */}
       <BottomSingleButton>
         <NextStep validation={handlePersonalInfo} />
       </BottomSingleButton>
