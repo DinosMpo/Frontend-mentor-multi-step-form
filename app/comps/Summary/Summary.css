@@ -1,7 +1,4 @@
 .summary-container {
-    /* max-width: 450px;
-    width: 100%;
-    position: relative; */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -13,9 +10,6 @@
 .summary-wrapper {
     display: flex;
     flex-direction: column;
-    /* gap: 18px; */
-    /* margin-top: 45px; */
-    /* padding: 25px; */
 }
 
 .summary-info-title {
@@ -41,7 +35,6 @@
 
 .summary-plan-wrapper {
     background-color: hsl(217, 100%, 97%);
-    /* border: 1px solid black; */
     padding: 17px;
 }
 
@@ -92,9 +85,7 @@
 hr {
     border: none;
     height: 1px;
-    /* Set the hr color */
     color: #333;
-    /* old IE */
     background-color: hsl(229, 24%, 87%);
     margin-bottom: 0px;
 }
@@ -116,8 +107,6 @@ hr {
         max-width: 90%;
         margin-top: 37px;
         flex-direction: column;
-        /* height: 100%; */
-        /* max-height: 500px; */
     }
 
     .summary-info-title {
@@ -127,10 +116,6 @@ hr {
 
     .summary-info-description {
         margin-bottom: 20px;
-    }
-
-    .summary-plan-charge-wrapper {
-        /* border: 1px solid black; */
     }
 
     .summary-plan-name {
@@ -144,19 +129,8 @@ hr {
         box-sizing: border-box;
     }
 
-    .summary-plan-container {
-        /* background-color: green; */
-        /* padding-right: 5px; */
-    }
-
-    .summary-addon-container {
-        /* padding: 5px 7px; */
-    }
-
     .summary-total-container {
-        /* border: 1px solid black; */
         margin-top: 0px;
-
     }
 
     .summary-plan-price {

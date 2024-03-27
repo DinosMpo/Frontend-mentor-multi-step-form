@@ -1,11 +1,7 @@
-import React from 'react'
-
-const Confirm = () => {
+export default function Confirm() {
   return (
     <div className='confirm' onClick={() => {}}>
         Confirm
     </div>
   )
-}
-
-export default Confirm
+}0

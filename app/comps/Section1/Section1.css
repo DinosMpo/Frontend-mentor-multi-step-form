@@ -34,8 +34,6 @@
     align-items: center;
 }
 
-.step-content {}
-
 .step-number-title {
     font-weight: 400;
     color: hsl(231, 11%, 63%);
@@ -53,9 +51,6 @@
 }
 
 @media only screen and (max-width: 763px) {
-    /* .container {
-      align-items:flex-start;
-    } */
     .step-content {
         display: none;
     }

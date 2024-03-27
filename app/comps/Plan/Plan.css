@@ -10,6 +10,11 @@
     cursor: pointer;
 }
 
+.active-plan {
+    border: 1px solid hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+
 .plan:hover {
     border: 1px solid hsl(243, 100%, 62%);
 }
@@ -32,22 +37,15 @@
 
 @media only screen and (max-width: 763px) {
     .plan {
-        display: flex;
         flex-flow: row;
         width: 100%;
         min-height: auto;
         padding: 17px;
-        border: 1px solid hsl(229, 24%, 87%);
-        border-radius: 10px;
         box-sizing: border-box;
-        cursor: pointer;
         gap: 15px;
     }
 
     .plan-name {
         margin-top: 0px;
-    }
-
-    .plan-image {
     }
 }
