@@ -14,3 +14,29 @@ body {
   height: 100vh;
   margin: 0px auto;
 }
+
+.section-wrapper {
+  height: 100%;
+  max-height: 600px;
+  width: 100%;
+  max-width: 940px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: white;
+}
+
+@media only screen and (max-width: 763px) {
+  .section-wrapper {
+      flex-direction: column;
+      width: 100%;
+      max-width: 375px;
+      height: 100%;
+      max-height: 900px;
+      border-radius: 0px;
+      background-image: url('/bg-sidebar-mobile.svg');
+      background-repeat: no-repeat;
+      position: relative;
+      background-color: hsl(217, 100%, 97%);
+  }
+}
