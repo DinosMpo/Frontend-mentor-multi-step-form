@@ -1,6 +1,4 @@
 import './BottomTwoButtons.css';
-import NextStep from '../NextStep/NextStep';
-import BackButton from '../BackButton/BackButton';
 
 export default function BottomTwoButtons({ children }) {
   return (

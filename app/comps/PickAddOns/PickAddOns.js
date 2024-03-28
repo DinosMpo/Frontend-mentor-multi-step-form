@@ -7,7 +7,7 @@ import BottomTwoButtons from '../BottomTwoButtons/BottomTwoButtons';
 import NextStep from '../NextStep/NextStep';
 import BackButton from '../BackButton/BackButton';
 
-const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
+export default function PickAddOns({ info, setInfo, setStepIndicator }) {
   const [addons, setAddons] = useState(info.addons);
 
   const chooseAddOn = (event, addon) => {
@@ -20,7 +20,6 @@ const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
       event.currentTarget.children[0].children[0].checked = true;
       addon.checked = true;
     }
-    console.log(addons);
   }
 
   const listOfAddOns = addons.map((addon, key) => {
@@ -60,5 +59,3 @@ const PickAddOns = ({ info, setInfo, setStepIndicator }) => {
     </div>
   )
 }
-
-export default PickAddOns

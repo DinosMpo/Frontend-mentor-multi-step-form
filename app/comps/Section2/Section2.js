@@ -8,7 +8,7 @@ import SelectPlan from '../SelectPlan/SelectPlan'
 import ThankYou from '../ThankYou/ThankYou'
 import PersonalInfo from '../PersonalInfo/PersonalInfo';
 
-const Section2 = ({ stepIndicator, setStepIndicator }) => {
+export default function Section2({ stepIndicator, setStepIndicator }) {
   const [info, setInfo] = useState({
     name: '',
     email: '',
@@ -54,5 +54,3 @@ const Section2 = ({ stepIndicator, setStepIndicator }) => {
     </div>
   )
 }
-
-export default Section2

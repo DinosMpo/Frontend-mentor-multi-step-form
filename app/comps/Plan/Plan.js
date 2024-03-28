@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { changePlan } from '../../lib/validations';
 import './Plan.css';
 
-const Plan = ({setActivePlan, activeDatePlan, className, name, image, monthly}) => {
+export default function Plan({setActivePlan, activeDatePlan, className, name, image, monthly}) {
   return (
     <div className={`plan ${className}`} onClick={(event) => changePlan(event, name, setActivePlan)}>
         <div className='plan-image-wrapper'>
@@ -26,5 +26,3 @@ const Plan = ({setActivePlan, activeDatePlan, className, name, image, monthly}) 
     </div>
   )
 }
-
-export default Plan
